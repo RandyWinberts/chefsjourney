@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>Chef's Journey Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-ui">
+    <header>
+      <div id="cash">💵 $0</div>
+      <div id="xp">⭐ XP: 0</div>
+      <div id="renown">🎖️ Renown: 0</div>
+    </header>
+
+    <section id="progress-area">
+      <h2>Cooking: Greg's Nachos</h2>
+      <progress id="cook-progress" value="0" max="100"></progress>
+      <button id="cook-btn">Help Cook (Click)</button>
+    </section>
+
+    <aside id="skills">
+      <h3>Skills</h3>
+      <p>🔪 Knife Skills: <span id="knife-skill">1</span></p>
+      <p>🔥 Heat Control: <span id="heat-skill">1</span></p>
+    </aside>
+
+    <nav id="quick-nav">
+      <button>📖 Recipe Book</button>
+      <button>🧠 Skills</button>
+      <button>🛠️ Upgrades</button>
+      <button>🍳 Equipment</button>
+      <button>🌍 Explore</button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
