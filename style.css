@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  width: 1280px;
+  height: 800px;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background: #2c2c2c;
+  font-size: 1.2rem;
+}
+
+#progress-area {
+  text-align: center;
+  margin: 2rem;
+}
+
+#cook-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+#skills {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}
+
+#quick-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background: #333;
+  padding: 0.5rem;
+}
