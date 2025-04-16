@@ -51,3 +51,14 @@ function animateGreg(frame) {
   const offset = frame * 128;
   document.getElementById('greg-sprite').style.backgroundPosition = `-${offset}px 0`;
 }
+
+
+// Optional idle animation loop
+let idleFrame = 0;
+setInterval(() => {
+  // Only animate idle frame when in game mode
+  if (!document.getElementById('game-ui').classList.contains('hidden')) {
+    idleFrame = (idleFrame + 1) % 2; // Toggle between frame 0 and 1 for idle/blink
+    animateGreg(idleFrame);
+  }
+}, 10000); // Change every 10 seconds
