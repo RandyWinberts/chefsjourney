@@ -7,19 +7,20 @@ function startGame() {
   document.getElementById('title-screen').classList.add('hidden');
   document.getElementById('game-ui').classList.remove('hidden');
   setGregLine("Right then. Try not to set anything on fire.");
-  animateGreg(0); // idle
+  animateGreg(0);
 }
 
 function cookRecipe() {
   progress = 0;
   document.getElementById('progress-bar').value = 0;
+  document.getElementById('progress-label').textContent = "Cooking... 0%";
   setGregLine("Cooking... let’s see if you learned anything.");
-  animateGreg(1); // cooking
 
   clearInterval(interval);
   interval = setInterval(() => {
     progress += 5;
     document.getElementById('progress-bar').value = progress;
+    document.getElementById('progress-label').textContent = `Cooking... ${progress}%`;
 
     if (progress >= 100) {
       clearInterval(interval);
@@ -36,9 +37,10 @@ function completeRecipe() {
 
   document.getElementById('cash').textContent = `$${cash}`;
   document.getElementById('xp').textContent = `${xp}`;
+  document.getElementById('progress-label').textContent = "Completed!";
 
   setGregLine("Not the worst thing I’ve seen today. Probably edible.");
-  animateGreg(2); // nod or react
+  document.getElementById('progress-bar').value = 0;
 }
 
 function setGregLine(text) {
@@ -46,7 +48,6 @@ function setGregLine(text) {
 }
 
 function animateGreg(frame) {
-  const sprite = document.getElementById('greg-sprite');
-  const offsetX = frame * 128;
-  sprite.style.backgroundPosition = `-${offsetX}px 0`;
+  const offset = frame * 128;
+  document.getElementById('greg-sprite').style.backgroundPosition = `-${offset}px 0`;
 }
