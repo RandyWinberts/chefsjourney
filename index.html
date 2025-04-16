@@ -2,38 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1280, initial-scale=1.0" />
-  <title>Chef's Journey Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chef's Journey: Greg's Kitchen Demo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main id="game-ui">
-    <header>
-      <div id="cash">💵 $0</div>
-      <div id="xp">⭐ XP: 0</div>
-      <div id="renown">🎖️ Renown: 0</div>
-    </header>
+  <div id="title-screen">
+    <h1>Chef's Journey</h1>
+    <button onclick="startGame()">Start New Game</button>
+  </div>
 
-    <section id="progress-area">
-      <h2>Cooking: Greg's Nachos</h2>
-      <progress id="cook-progress" value="0" max="100"></progress>
-      <button id="cook-btn">Help Cook (Click)</button>
-    </section>
+  <div id="game-ui" class="hidden">
+    <img id="kitchen-bg" src="assets/gregs-kitchen.jpg" alt="Greg's Kitchen" />
+    <div id="hud">
+      <div id="top-bar">
+        <div id="progress-container">
+          <label>Cooking Progress:</label>
+          <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+        <div id="stats">
+          💵 <span id="cash">$0</span> | ⭐ XP: <span id="xp">0</span>
+        </div>
+      </div>
 
-    <aside id="skills">
-      <h3>Skills</h3>
-      <p>🔪 Knife Skills: <span id="knife-skill">1</span></p>
-      <p>🔥 Heat Control: <span id="heat-skill">1</span></p>
-    </aside>
+      <div id="active-recipe">
+        <h2 id="recipe-name">Greg's Nachos</h2>
+        <p>🧂 Ingredients: stale chips, pump cheese, jarred jalapeños</p>
+        <p>👨‍🍳 Skills: Heat 1, Knife 1</p>
+        <button onclick="cookRecipe()">Cook</button>
+      </div>
 
-    <nav id="quick-nav">
-      <button>📖 Recipe Book</button>
-      <button>🧠 Skills</button>
-      <button>🛠️ Upgrades</button>
-      <button>🍳 Equipment</button>
-      <button>🌍 Explore</button>
-    </nav>
-  </main>
+      <div id="greg-box">
+        <div id="greg-sprite"></div>
+        <div id="greg-line">"Welcome to hell’s pantry."</div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
